@@ -15,10 +15,17 @@ So I decided to show a comparison of **all three methods** and why Random Forest
 # Dataset analysis
 Analysis of the main dataset includes cleaning up missing values ​​and removing outliers.
 The most difficult question was what to do with the missing values ​​in Credit_History. There were 30/358 missing values ​​in this column. Simple deletion would have been overkill for the prediction.
-A good solution would be to replace the missing values ​​with the largest value in the dataset.
+
+Also a good solution would be to replace the missing values ​​with the largest value in the dataset.
 ``` python
 Credit_History
 1.0    282
 0.0     46
 Name: count, dtype: int64
+```
+But in reality, credit history cannot be replaced by a specific value because this column has a big impact on predictions.
+
+The best solution was to replace the missing values ​​with "unavailable." This makes sense because people with unavailable credit histories also have a significant impact on the predictions.
+``` python
+df_no_null['Credit_History'] = df_no_null['Credit_History'].fillna("unavailable")
 ```
