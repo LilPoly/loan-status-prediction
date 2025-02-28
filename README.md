@@ -112,3 +112,39 @@ Loan_Status
 0    177
 Name: count, dtype: int64
 ```
+Train the model and look at the confusion matrix.
+
+![conf_matrix](ing/balanced_matrix.png)
+
+The balance between 0 and 1 has been established. Let's check the classification report.
+
+``` python
+precision	recall	f1-score	support
+0	0.850000	0.693878	0.764045	49.000000
+1	0.705882	0.857143	0.774194	42.000000
+accuracy	0.769231	0.769231	0.769231	0.769231
+macro avg	0.777941	0.775510	0.769119	91.000000
+weighted avg	0.783484	0.769231	0.768729	91.000000
+```
+
+Recall of 0, although increased, remains quite low. In addition, the number of precision and recall of 1 decreased.
+
+It becomes clear that Logistic Regression does not cope with this task.
+
+# Random Forest
+
+A Random Forest is a collection of decision trees that work together to make predictions. Before starting, we balance 0 and 1 using SMOTE.
+
+Before starting, balance 0 and 1 using SMOTE. Then train the model.
+
+``` python
+# SMOTE realization
+sm = SMOTE(random_state=42, k_neighbors=5)
+x_res, y_res = sm.fit_resample(x, y)
+
+x_train, x_test, y_train, y_test = train_test_split(x_res, y_res, test_size=0.2, random_state=20)
+
+# Random Forest realization
+model = RandomForestClassifier(n_estimators=100, random_state=42)
+model.fit(x_train, y_train)
+```
