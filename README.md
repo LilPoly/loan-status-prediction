@@ -13,6 +13,7 @@ The result surprised me.
 So I decided to show a comparison of **all three methods** and why Random Forest turned out to be the best.
 
 # Dataset analysis
+All code ![log_reg](analysis/logistic_regression.ipynb)
 Analysis of the main dataset includes cleaning up missing values ​​and removing outliers.
 The most difficult question was what to do with the missing values ​​in Credit_History. There were 30/358 missing values ​​in this column. Simple deletion would have been overkill for the prediction.
 
@@ -69,4 +70,16 @@ df_scaled[columns_to_scale] = scaler.fit_transform(df_scaled[columns_to_scale])
 To evaluate the prediction, we will use the confusion matrix and classification report.
 Let's look at the confusion matrix:
 ![conf_matrix](img/conf_matrix.png)
+As we can see the ratio between 0 and 1 is very large. 6:50. We can check the classification report to see if there is indeed something wrong.
+|              | precision | recall | f1-score | support |
+|--------------|-----------|--------|----------|---------|
+| 0            | 0.750000  | 0.400000 | 0.521739 | 15.000000 |
+| 1            | 0.847458  | 0.961538 | 0.900901 | 52.000000 |
+| accuracy     | 0.835821  | 0.835821 | 0.835821 | 0.835821 |
+| macro avg    | 0.798729  | 0.680769 | 0.711320 | 67.000000 |
+| weighted avg | 0.825639  | 0.835821 | 0.816014 | 67.000000 |
+The numbers are not impressive, especially the recall of 0.
+
+The problem arose due to an imbalance in the number of values ​​0 and 1.
+
 
