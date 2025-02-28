@@ -11,3 +11,14 @@ https://www.kaggle.com/datasets/bhavikjikadara/loan-status-prediction/data
 From the beginning, the main goal was to make predictions only using **Logistic Regression**. But my results were **very bad**, then I started making predictions with **balanced data**, but that **didn't help either**. That's how I ended up with **Random Forest with balanced data**.  
 The result surprised me.  
 So I decided to show a comparison of **all three methods** and why Random Forest turned out to be the best.
+
+# Dataset analysis
+Analysis of the main dataset includes cleaning up missing values ​​and removing outliers.
+The most difficult question was what to do with the missing values ​​in Credit_History. There were 30/358 missing values ​​in this column. Simple deletion would have been overkill for the prediction.
+A good solution would be to replace the missing values ​​with the largest value in the dataset.
+``` python
+Credit_History
+1.0    282
+0.0     46
+Name: count, dtype: int64
+```
