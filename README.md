@@ -67,4 +67,6 @@ df_scaled[columns_to_scale] = scaler.fit_transform(df_scaled[columns_to_scale])
 
 # Prediction with Logistic Regression
 To evaluate the prediction, we will use the confusion matrix and classification report.
+Let's look at the confusion matrix:
+![conf_matrix](img/conf_matrix.png)
 
