@@ -50,3 +50,15 @@ sns.displot(df_dummies_1['ApplicantIncome'])
 ```
 ![postoutliers](img/post_outliers_ApplicantIncome.png)
 
+Another important step is to scale the numeric variables.
+``` python
+from sklearn.preprocessing import StandardScaler
+
+df_scaled = df_dummies_1.copy()
+
+columns_to_scale = ['ApplicantIncome', 'CoapplicantIncome', 'LoanAmount', 'Loan_Amount_Term']
+
+scaler = StandardScaler()
+
+df_scaled[columns_to_scale] = scaler.fit_transform(df_scaled[columns_to_scale])
+```
