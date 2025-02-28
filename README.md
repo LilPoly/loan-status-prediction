@@ -8,6 +8,6 @@
 https://www.kaggle.com/datasets/bhavikjikadara/loan-status-prediction/data
 
 ## **Important Note**
-From the beginning, the main goal was to make predictions only using **Logistic Regression**. But my results were ***very bad***, then I started making predictions with **balanced data**, but that ***didn't help either***. That's how I ended up with **Random Forest with balanced data**.  
+From the beginning, the main goal was to make predictions only using **Logistic Regression**. But my results were **very bad**, then I started making predictions with **balanced data**, but that **didn't help either**. That's how I ended up with **Random Forest with balanced data**.  
 The result surprised me.  
-So I decided to show a comparison of ***all three methods*** and why Random Forest turned out to be the best.
+So I decided to show a comparison of **all three methods** and why Random Forest turned out to be the best.
