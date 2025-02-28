@@ -147,3 +147,22 @@ x_train, x_test, y_train, y_test = train_test_split(x_res, y_res, test_size=0.2,
 model = RandomForestClassifier(n_estimators=100, random_state=42)
 model.fit(x_train, y_train)
 ```
+**Confusion Matrix**
+[conf_matrix](img/rf_matrix.png)
+
+**Classification Report**
+
+|              | precision | recall | f1-score | support |
+|--------------|-----------|--------|----------|---------|
+| 0            | 0.931818  | 0.836735 | 0.881720 | 49.000000 |
+| 1            | 0.829787  | 0.928571 | 0.876404 | 42.000000 |
+| accuracy     | 0.879121  | 0.879121 | 0.879121 | 0.879121 |
+| macro avg    | 0.880803  | 0.882653 | 0.879062 | 91.000000 |
+| weighted avg | 0.884727  | 0.879121 | 0.879267 | 91.000000 |
+
+The results after Random Forest are the best. 
+
+For comparison, we can look at the presionn vs. recall in each of the situations.
+
+![precisionvs.recall](dashboard/precision vs recall in different situatuations)
+
