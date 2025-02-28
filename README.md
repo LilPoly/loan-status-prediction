@@ -114,18 +114,17 @@ Name: count, dtype: int64
 ```
 Train the model and look at the confusion matrix.
 
-![conf_matrix](ing/balanced_matrix.png)
+![conf_matrix](img/balanced_matrix.png)
 
 The balance between 0 and 1 has been established. Let's check the classification report.
 
-``` python
-precision	recall	f1-score	support
-0	0.850000	0.693878	0.764045	49.000000
-1	0.705882	0.857143	0.774194	42.000000
-accuracy	0.769231	0.769231	0.769231	0.769231
-macro avg	0.777941	0.775510	0.769119	91.000000
-weighted avg	0.783484	0.769231	0.768729	91.000000
-```
+|              | precision | recall | f1-score | support |
+|--------------|-----------|--------|----------|---------|
+| 0            | 0.850000  | 0.693878 | 0.764045 | 49.000000 |
+| 1            | 0.705882  | 0.857143 | 0.774194 | 42.000000 |
+| accuracy     | 0.769231  | 0.769231 | 0.769231 | 0.769231 |
+| macro avg    | 0.777941  | 0.775510 | 0.769119 | 91.000000 |
+| weighted avg | 0.783484  | 0.769231 | 0.768729 | 91.000000 |
 
 Recall of 0, although increased, remains quite low. In addition, the number of precision and recall of 1 decreased.
 
