@@ -29,3 +29,11 @@ The best solution was to replace the missing values ​​with "unavailable." Th
 ``` python
 df_no_null['Credit_History'] = df_no_null['Credit_History'].fillna("unavailable")
 ```
+## Categorical Variables
+The next step was to transform the categorical variables. My solution used the map method for the columns Gender, Married, Dependents, Education, Self_Employed, Credit_History, Property_Area and Loan_Status.
+``` python
+df_dummies['Gender'] = df_dummies['Gender'].map({"Male": 0, "Female":1})
+```
+
+## Outliers
+To detect outliers, distplot from the seaborn library was used.
