@@ -164,5 +164,5 @@ The results after Random Forest are the best.
 
 For comparison, we can look at the presionn vs. recall in each of the situations.
 
-![precisionvs.recall](dashboard/precision vs recall in different situatuations)
+![precisionvs.recall](dashboard/precision vs recall in different situatuations.png)
 
