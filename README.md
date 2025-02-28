@@ -41,3 +41,12 @@ To detect outliers, distplot from the seaborn library was used.
 sns.displot(df_dummies_1['ApplicantIncome'])
 ```
 ![outliers](img/outliersApplicantIncome.png)
+There are quite influential outliers on the right side of the distplot. We can remove the 1% largest outliers.
+``` python
+q = df_dummies_1['ApplicantIncome'].quantile(0.99)
+df_dummies_1 = df_dummies_1[df_dummies_1['ApplicantIncome']<q]
+
+sns.displot(df_dummies_1['ApplicantIncome'])
+```
+![postoutliers](img/post_outliers_ApplicantIncome.png)
+
