@@ -166,3 +166,7 @@ For comparison, we can look at the presionn vs. recall in each of the situations
 
 ![precisionvs.recall](dashboard/precision%20vs%20recall%20in%20different%20situations.png)
 
+# Conclusion
+In conclusion, the task could have been much faster if I had used Random Forest right away. Random Forest is better for my task because it can handle complex, nonlinear dependencies, work with different data types (both numeric and categorical), is robust to outliers and missing values, and provides the ability to estimate the importance of features. But it was a good experience not to use Logistic Regression right away when I see a binary classification.
+
+## Thanks for reading!
