@@ -40,4 +40,4 @@ To detect outliers, distplot from the seaborn library was used.
 ``` python
 sns.displot(df_dummies_1['ApplicantIncome'])
 ```
-![outliers](outliersApplicantIncome.png)
+![outliers](img/outliersApplicantIncome.png)
