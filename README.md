@@ -14,6 +14,7 @@ So I decided to show a comparison of **all three methods** and why Random Forest
 
 # Dataset analysis
 All code [analysis/logistic_regression.ipynb](analysis/logistic_regression.ipynb)
+
 Analysis of the main dataset includes cleaning up missing values ​​and removing outliers.
 The most difficult question was what to do with the missing values ​​in Credit_History. There were 30/358 missing values ​​in this column. Simple deletion would have been overkill for the prediction.
 
@@ -42,6 +43,7 @@ To detect outliers, distplot from the seaborn library was used.
 sns.displot(df_dummies_1['ApplicantIncome'])
 ```
 ![outliers](img/outliersApplicantIncome.png)
+
 There are quite influential outliers on the right side of the distplot. We can remove the 1% largest outliers.
 ``` python
 q = df_dummies_1['ApplicantIncome'].quantile(0.99)
@@ -88,4 +90,25 @@ The problem arose due to an imbalance in the number of values ​​0 and 1.
 
 # Balancing in the Loan_Status column
 
-Code [analysis/class_balancing.ipynb](analysis/class_balancing.ipynb)
+All Code [analysis/class_balancing.ipynb](analysis/class_balancing.ipynb)
+
+The SMOTE method was used for the balance for task.
+
+``` python
+from imblearn.over_sampling import SMOTE
+y = data['Loan_Status']
+x = data.drop(['Loan_Status'], axis=1)
+
+# SMOTE realization
+sm = SMOTE(random_state=42, k_neighbors=5)
+
+x_res, y_res = sm.fit_resample(x, y)
+```
+0 and 1 in the updated Loan_Status column.
+
+``` python
+Loan_Status
+1    184
+0    177
+Name: count, dtype: int64
+```
