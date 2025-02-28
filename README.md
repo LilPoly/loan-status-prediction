@@ -13,7 +13,7 @@ The result surprised me.
 So I decided to show a comparison of **all three methods** and why Random Forest turned out to be the best.
 
 # Dataset analysis
-All code (analysis/logistic_regression.ipynb)
+All code [analysis/logistic_regression.ipynb](analysis/logistic_regression.ipynb)
 Analysis of the main dataset includes cleaning up missing values ​​and removing outliers.
 The most difficult question was what to do with the missing values ​​in Credit_History. There were 30/358 missing values ​​in this column. Simple deletion would have been overkill for the prediction.
 
@@ -88,4 +88,4 @@ The problem arose due to an imbalance in the number of values ​​0 and 1.
 
 # Balancing in the Loan_Status column
 
-Code (analysis/class_balancing.ipynb)
+Code [analysis/class_balancing.ipynb](analysis/class_balancing.ipynb)
