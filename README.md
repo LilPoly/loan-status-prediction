@@ -37,3 +37,7 @@ df_dummies['Gender'] = df_dummies['Gender'].map({"Male": 0, "Female":1})
 
 ## Outliers
 To detect outliers, distplot from the seaborn library was used.
+``` python
+sns.displot(df_dummies_1['ApplicantIncome'])
+```
+![outliers](img/outliers_ApplicantIncome.png)
