@@ -37,3 +37,34 @@ df_dummies['Gender'] = df_dummies['Gender'].map({"Male": 0, "Female":1})
 
 ## Outliers
 To detect outliers, distplot from the seaborn library was used.
+``` python
+sns.displot(df_dummies_1['ApplicantIncome'])
+```
+![outliers](img/outliersApplicantIncome.png)
+There are quite influential outliers on the right side of the distplot. We can remove the 1% largest outliers.
+``` python
+q = df_dummies_1['ApplicantIncome'].quantile(0.99)
+df_dummies_1 = df_dummies_1[df_dummies_1['ApplicantIncome']<q]
+
+sns.displot(df_dummies_1['ApplicantIncome'])
+```
+![postoutliers](img/post_outliers_ApplicantIncome.png)
+
+## Scaling
+
+Another important step is to scale the numeric variables.
+``` python
+from sklearn.preprocessing import StandardScaler
+
+df_scaled = df_dummies_1.copy()
+
+columns_to_scale = ['ApplicantIncome', 'CoapplicantIncome', 'LoanAmount', 'Loan_Amount_Term']
+
+scaler = StandardScaler()
+
+df_scaled[columns_to_scale] = scaler.fit_transform(df_scaled[columns_to_scale])
+```
+
+# Prediction with Logistic Regression
+To evaluate the prediction, we will use the confusion matrix and classification report.
+
