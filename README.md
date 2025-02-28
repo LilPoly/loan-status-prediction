@@ -13,7 +13,7 @@ The result surprised me.
 So I decided to show a comparison of **all three methods** and why Random Forest turned out to be the best.
 
 # Dataset analysis
-All code ![log_reg](analysis/logistic_regression.ipynb)
+All code [log_reg](analysis/logistic_regression.ipynb)
 Analysis of the main dataset includes cleaning up missing values ​​and removing outliers.
 The most difficult question was what to do with the missing values ​​in Credit_History. There were 30/358 missing values ​​in this column. Simple deletion would have been overkill for the prediction.
 
