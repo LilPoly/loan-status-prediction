@@ -50,6 +50,8 @@ sns.displot(df_dummies_1['ApplicantIncome'])
 ```
 ![postoutliers](img/post_outliers_ApplicantIncome.png)
 
+## Scaling
+
 Another important step is to scale the numeric variables.
 ``` python
 from sklearn.preprocessing import StandardScaler
@@ -62,3 +64,7 @@ scaler = StandardScaler()
 
 df_scaled[columns_to_scale] = scaler.fit_transform(df_scaled[columns_to_scale])
 ```
+
+# Prediction with Logistic Regression
+To evaluate the prediction, we will use the confusion matrix and classification report.
+
