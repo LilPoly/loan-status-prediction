@@ -148,7 +148,7 @@ model = RandomForestClassifier(n_estimators=100, random_state=42)
 model.fit(x_train, y_train)
 ```
 **Confusion Matrix**
-[conf_matrix](img/rf_matrix.png)
+![conf_matrix](img/rf_matrix.png)
 
 **Classification Report**
 
